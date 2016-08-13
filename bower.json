@@ -1,7 +1,10 @@
 {
   "name": "ng-spin",
-  "description": "AJAX spinner for angular.js",
-  "main": "index.js",
+  "description": "$http interceptor spinner for angular.js",
+  "main": [
+    "dist/ng-spin.css",
+    "dist/ng-spin.js"
+  ],
   "authors": [
     "Uday Hiwarale <uhiwarale@gmail.com> (https://github.com/thatisuday)"
   ],
