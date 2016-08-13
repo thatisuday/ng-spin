@@ -45,8 +45,8 @@ angular
 | ------ | ------ | ------- | ---- |
 | autoGlobal | true/false | false | show spinner for every $http request (automatically) |
 | spinner | bars, big-bang, binary, cubes, flipboard, ping, plane, snake, sos, worm | big-bang | choose spinner animation type |
-| size | 'normal', 'sm', 'xs' | 'normal' | size of the spinner |
-| color | hex, rgba | '#333' | color of the spinner |
+| size | normal, sm, xs | normal | size of the spinner |
+| color | hex, rgba | #333 | color of the spinner |
 | position | left-top, right-top, left-bottom, right-bottom, center | right-top | position of the spinner on the page |
 | blocking | false, white, black, transparent | false | show page overlay for spinner |
 
@@ -96,6 +96,7 @@ myApp.controller(function($ngSpin, $scope){
 
 As most of the thing is happening inside config phase, there isn't must to simulate. Clone this repo and open `demo/main.html` in browser. Try different options in `config` block.
 
+Go to [`archibiz.com`](https://www.archibiz.com) to get a look and feel of it. I have set `autoGlobal` to `true`, so every `$http` request is intercepted by `ng-spin`. 
 
 ***
 
