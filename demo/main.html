@@ -28,9 +28,10 @@
 			.module('demo', ['thatisuday.ng-spin'])
 			.config(function(ngSpinOpsProvider){
 				ngSpinOpsProvider.setOps({
-					spinner : 'binary',
-					color : '#000',
-					autoGlobal : true
+					spinner : 'flipboard',
+					color : 'rgba(103, 58, 183, 0.9)',
+					autoGlobal : true,
+					extend : 3000
 				});
 			})
 			.controller('main', function($scope, $ngSpin, $timeout, $http){

@@ -1,32 +1,6 @@
 // module
 angular.module('thatisuday.ng-spin', []);
 
-// config
-angular
-.module('thatisuday.ng-spin')
-.config(['$httpProvider', function($httpProvider){
-	$httpProvider
-	.interceptors
-	.push(['$rootScope', 'ngSpinOps', function($rootScope, ngSpinOps){
-		return {
-			'request' : function(request){
-				if(request.ngSpin || ngSpinOps.autoGlobal){
-					$rootScope.$emit('$ngSpinStart');
-				}
-
-				return request;
-			},
-			'response' : function(response){
-				if(response.config.ngSpin || ngSpinOps.autoGlobal){
-					$rootScope.$emit('$ngSpinStop');
-				}
-
-				return response;
-			}
-		}
-	}]);
-}]);
-
 // directive
 angular
 .module('thatisuday.ng-spin')
@@ -172,6 +146,46 @@ angular
 	}
 }]);
 
+// http interceptor
+angular
+.module('thatisuday.ng-spin')
+.config(['$httpProvider', function($httpProvider){
+	$httpProvider
+	.interceptors
+	.push(['$rootScope', '$timeout', 'ngSpinOps', function($rootScope, $timeout, ngSpinOps){
+		return {
+			'request' : function(request){
+				if(request.ngSpin || ngSpinOps.autoGlobal){
+					$timeout(function(){
+						$rootScope.$emit('$ngSpinStart');
+					}, ngSpinOps.delay);
+					
+				}
+
+				return request;
+			},
+			'response' : function(response){
+				if(response.config.ngSpin || ngSpinOps.autoGlobal){
+					$timeout(function(){
+						$rootScope.$emit('$ngSpinStop');
+					}, ngSpinOps.extend);
+				}
+
+				return response;
+			},
+			'responseError' : function(response){
+				if(response.config.ngSpin || ngSpinOps.autoGlobal){
+					$timeout(function(){
+						$rootScope.$emit('$ngSpinStop');
+					}, ngSpinOps.extend);
+				}
+
+				return response;
+			}
+		}
+	}]);
+}]);
+
 // provider
 angular
 .module('thatisuday.ng-spin')
@@ -183,6 +197,8 @@ angular
 		color : '#333',
 		position : 'right-top',
 		blocking : false,
+		delay : 0,
+		extend : 100
 	};
 
 	return {

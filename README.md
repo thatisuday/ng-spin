@@ -36,7 +36,9 @@ angular
 		size : 'normal',
 		color : '#333',
 		position : 'right-top',
-		blocking : false
+		blocking : false,
+		delay : 0,
+		extend : 100
 	});
 })
 ```
@@ -49,7 +51,12 @@ angular
 | color | hex, rgba | #333 | color of the spinner |
 | position | left-top, right-top, left-bottom, right-bottom, center | right-top | position of the spinner on the page |
 | blocking | false, white, black, transparent | false | show page overlay for spinner |
+| delay | time in milliseconds | 0 | delay animation start |
+| extend | time in milliseconds | 100 | extend animation |
 
+> `delay` and `extend` options are used only in case of `Global` or `Request specific` implementation.
+>
+> Do not add `delay` more than `extend`.
 
 ***
 
@@ -60,7 +67,7 @@ If you are setting `autoGlobal` in config to `true` then you pretty much done he
 
 But If you want to show animation manually, then there are two other options as mentioned below.
 
-### Request specific
+### Request specific (semi-auto)
 
 ```
 $http({

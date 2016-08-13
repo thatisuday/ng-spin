@@ -9,6 +9,8 @@ angular
 		color : '#333',
 		position : 'right-top',
 		blocking : false,
+		delay : 0,
+		extend : 100
 	};
 
 	return {
