@@ -2,10 +2,6 @@
   "name": "ng-spin",
   "version": "1.0.0",
   "description": "$http interceptor spinner for angular.js ",
-  "main": [
-    "dist/ng-spin.css",
-    "dist/ng-spin.js"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
