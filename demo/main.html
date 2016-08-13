@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+	<head>
+		<title>ng-image-gallery</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<!-- Local Dependencies -->
+		<!-- <script src="../bower_components/angular/angular.js"></script> -->
+
+		<!-- Dependencies -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+		<!-- Module files-->
+		<script src="../dist/ng-spin.min.js"></script>
+		<link href="../dist/ng-spin.min.css" rel="stylesheet"/>
+
+		<style>
+			body{
+				background-color: #eee;
+			}
+		</style>
+	</head>
+	<body ng-controller="main">
+		<h1>Reload this page!</h1>
+		
+		<script>
+			angular
+			.module('demo', ['thatisuday.ng-spin'])
+			.config(function(ngSpinOpsProvider){
+				ngSpinOpsProvider.setOps({
+					spinner : 'binary',
+					color : '#000',
+					autoGlobal : true
+				});
+			})
+			.controller('main', function($scope, $ngSpin, $timeout, $http){
+				$http({
+					url : 'https://api.github.com/users/isaacs/repos',
+					method : 'GET'
+				}).then(function(res){
+					console.log(res);
+				});
+			});
+		</script>
+	</body>
+</html>

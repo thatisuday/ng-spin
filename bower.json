@@ -1,0 +1,20 @@
+{
+  "name": "ng-spin",
+  "description": "AJAX spinner for angular.js",
+  "main": "index.js",
+  "authors": [
+    "Uday Hiwarale <uhiwarale@gmail.com> (https://github.com/thatisuday)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/thatisuday/ng-spin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
