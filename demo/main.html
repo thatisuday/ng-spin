@@ -28,18 +28,21 @@
 			.module('demo', ['thatisuday.ng-spin'])
 			.config(function(ngSpinOpsProvider){
 				ngSpinOpsProvider.setOps({
-					spinner : 'flipboard',
-					color : 'rgba(103, 58, 183, 0.9)',
 					autoGlobal : true,
+					spinner : 'flipboard',
+					size : 'sm',
+					color : 'rgba(103, 58, 183, 0.9)',
 					extend : 3000
 				});
 			})
 			.controller('main', function($scope, $ngSpin, $timeout, $http){
 				$http({
-					url : 'https://api.github.com/users/isaacs/repos',
+					url : 'https://api.github.com/users/isaac/repos',
 					method : 'GET'
 				}).then(function(res){
-					console.log(res);
+					console.info(res);
+				}, function(err){
+					console.warn(err);
 				});
 			});
 		</script>
