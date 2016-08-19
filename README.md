@@ -56,14 +56,14 @@ angular
 
 > `delay` and `extend` options are used only in case of `Global` or `Request specific` implementation.
 >
-> Do not add `delay` more than `extend`.
+> Do not set value of `delay` more than `extend`.
 
 ***
 
 ## Implement (use)
 
 ### Global (auto)
-If you are setting `autoGlobal` in config to `true` then you pretty much done here. All your `$http` requests will be intercepted by `ng-spin` and spinner will be shown.
+If you are setting `autoGlobal` in config to `true` then you pretty much done here. All your `$http` requests will be intercepted by `ng-spin` and spinner will be shown/hidden on request/response.
 
 But If you want to show animation manually, then there are two other options as mentioned below.
 
@@ -84,7 +84,7 @@ Setting `ngSpin` to true in `request` object of a `$http` request will trigger `
 You can use `$ngSpin` service which returns `start` and `stop` method for spinner.
 
 ```
-myApp.controller(function($ngSpin, $scope){
+myApp.controller('myCtrl', function($ngSpin, $scope){
 	$scope.loadData = function(){
 		$ngSpin.start();
 
