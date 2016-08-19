@@ -45,7 +45,7 @@ angular
 
 | option | values | default | role | 
 | ------ | ------ | ------- | ---- |
-| autoGlobal | true/false | false | show spinner for every $http request (automatically) |
+| autoGlobal | true/false | false | show/hide spinner for every $http request (automatically) |
 | spinner | bars, big-bang, binary, cubes, flipboard, ping, plane, snake, sos, worm | big-bang | choose spinner animation type |
 | size | normal, sm, xs | normal | size of the spinner |
 | color | hex, rgba | #333 | color of the spinner |
@@ -109,7 +109,7 @@ Go to [`archibiz.com`](https://www.archibiz.com) to get a look and feel of it. I
 
 ## Build
 
-This repo is built with **gulp**. Clone this repo and use `npm install --only=dev` for custom build.
+This repo is built with **gulp**. Clone this repo and use `npm install --only=dev` to install all dev-dependencies. Use `gulp build` or `gulp watch` for custom build.
 
 ***
 
