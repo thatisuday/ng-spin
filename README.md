@@ -1,4 +1,5 @@
-# ng-spin
+# ng-spin ![bower](https://img.shields.io/bower/v/ng-spin.svg?style=flat-square) [![npm downloads](https://img.shields.io/npm/dt/ng-spin.svg?style=flat-square)](https://www.npmjs.com/package/ng-spin) [![preview](https://img.shields.io/badge/preview-click here-green.svg?style=flat-square)](https://rawgit.com/thatisuday/ng-spin/master/demo/main.html)
+
 ##### $http interceptor spinner for angular.js
 
 Sometimes, you just need to show a spinning animation for some or every `$http` (ajax) request. This module makes your life easier by providing global, request specific and manual/non-http option to show/hide spinner. Shipped with multiple spinner types made by **[tobiasahlin](http://tobiasahlin.com/spinkit/)**.
